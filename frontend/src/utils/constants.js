@@ -1,4 +1,4 @@
-export const url = 'http://localhost:5000/'
+export const url = 'https://backend-flax-six.vercel.app/'
 export const TODOS = 'todos'
 export const QUEUE = 'queue'
 export const CREATE = 'create'
