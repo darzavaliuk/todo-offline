@@ -9,7 +9,13 @@ dotenv.config()
 let app = express();
 let port = process.env.PORT || 5000;
 
-app.use(cors())
+app.use(cors(
+//     {
+//         origin: {},
+//         methods: ["POST", "GET", "PUT"],
+//         credentials: true
+//     }
+))
 app.use(express.json())
 
 app.listen(port, function () {
@@ -18,8 +24,8 @@ app.listen(port, function () {
 
 const mongoURI = process.env.MONGO
 
-    mongoose.connect(mongoURI)
-        .then(() => console.log("connect to db"))
-        .catch(er => console.log(er))
+mongoose.connect(mongoURI)
+    .then(() => console.log("connect to db"))
+    .catch(er => console.log(er))
 
 app.use("/", router);
